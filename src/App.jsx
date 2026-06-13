@@ -15,6 +15,10 @@ import pigeonNicobar from './assets/pigeon-nicobar.jpg';
 import pigeonLuzonBleedingHeart from './assets/pigeon-luzonbleedingheart.jpg';
 import pigeonBrunnerPouter from './assets/pigeon-brunnerpouter.jpg';
 import doveEurasianCollared from './assets/dove-eurasiancollared.jpg';
+import doveJambuFruitMale from './assets/dove-jambufruitmale.jpg';
+import pigeonCommonWood from './assets/pigeon-commonwood.jpg';
+import pigeonSpeckled from './assets/pigeon-speckled.jpg';
+
 
 const App = () => {
   const pigeonCards = [
@@ -77,7 +81,22 @@ const App = () => {
       question: doveEurasianCollared,
       answer: "Eurasian Collared Dove",
       category: "Common"
-    }
+    },
+    {
+      question: doveJambuFruitMale,
+      answer: "Jambu Fruit Dove (Male)",
+      category: "Rare"
+    },
+    {
+      question: pigeonCommonWood,
+      answer: "Common Wood Pigeon",
+      category: "Common"
+    },
+    {
+      question: pigeonSpeckled,
+      answer: "Speckled Pigeon",
+      category: "Common"
+    } 
   ];
 
   function getRandomIntExclusive(min, max) { // outsourced logic
