@@ -1,47 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 /* Reset default body margins to prevent white borders and center everything */
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7f5; /* Clean, light neutral background */
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Main App Container - Centers the study layout */
 .App {
   width: 100%;
-  max-width: 800px;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  box-sizing: border-box;
 }
 
 /* Header Section - Clean, dark text with clear separation */
 .header {
   text-align: center;
   color: #2c3e50;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
   width: 100%;
+  max-width: 550px;
 }
 
 .header h1 {
-  font-size: 2.5em;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  letter-spacing: -0.5px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 4em;
+  font-weight: 400;
+  margin: 0 0 50px 0;
+  letter-spacing: 1px;
+  color: #1a1a1a;
 }
 
 .header h3 {
   font-size: 1.1em;
   color: #7f8c8d;
-  margin: 0 0 15px 0;
+  margin: 0 0 20px 0;
   font-weight: 400;
   line-height: 1.5;
   max-width: 600px;
@@ -50,11 +58,13 @@ body {
 }
 
 .header span {
+  display: inline-block;
   font-size: 0.95em;
   font-weight: 600;
   color: #95a5a6;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 5px;
 }
 
 /* Minimalist Flip Card Container - Matches the clean screenshot layout */
@@ -63,12 +73,11 @@ body {
   max-width: 550px;
   height: 320px;
   background: transparent;
-  border: 2px solid #e2e8f0;
+  border: 1px solid #d0d5d2;
   border-radius: 8px;
   cursor: pointer;
   margin: 0 auto;
   position: relative;
-  overflow: visible;
   box-sizing: border-box;
   perspective: 1000px;
 }
@@ -91,9 +100,10 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Front and Back Sides */
 .flip-card-front, .flip-card-back {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
@@ -102,6 +112,7 @@ body {
   justify-content: center;
   background: #ffffff;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .flip-card-front {
@@ -113,39 +124,19 @@ body {
   transform: rotateY(180deg);
 }
 
-.card-content img {
+.flip-card-front img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 6px;
-  scale: 1.15;
+  padding: 20px;
 }
 
-/* Card Question/Answer Text */
-.card-content p {
-  font-size: 1.3em;
-  font-weight: 500;
-  color: #1a202c;
-  line-height: 1.6;
-  margin: 0;
-  word-break: break-word;
-}
-
-/* Flip Card Front Image */
-.flip-card-front img {
-  max-width: 500px;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 6px;
-}
-
-/* Flip Card Back Text */
 .flip-card-back p {
   font-size: 1.3em;
-  font-weight: 500;
-  color: #1a202c;
+  font-weight: 600;
+  color: #262c3a;
   line-height: 1.6;
   margin: 0;
   word-break: break-word;
@@ -153,7 +144,6 @@ body {
   text-align: center;
 }
 
-/* Category Badge - Positioned discreetly in the corner */
 .category-common,
 .category-rare,
 .category-ornamental {
@@ -167,6 +157,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  z-index: 1;
 }
 
 .category-common { background-color: #2ecc71; }

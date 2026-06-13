@@ -45,7 +45,7 @@ const App = () => {
     {
       question: pigeonBirminghamRoller,
       answer: "Birmingham Roller",
-      category: "Rare"
+      category: "Ornamental"
     },
     {
       question: pigeonRock,
