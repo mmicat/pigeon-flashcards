@@ -4,7 +4,7 @@ Submitted by: **Mira Mohamad Ismail**
 
 This web app: **insert description**
 
-Time spent: **3.5** hours spent in total
+Time spent: **4.5** hours spent in total
 
 ## Required Features
 
@@ -27,7 +27,7 @@ The following **optional** features are implemented:
 
 - [x] Cards contain images in addition to or in place of text
   - [x] Some or all cards have images in place of or in addition to text
-- [ ] Cards have different visual styles such as color based on their category
+- [x] Cards have different visual styles such as color based on their category
   - Example categories you can use:
     - Difficulty: Easy/medium/hard
     - Subject: Biology/Chemistry/Physics/Earth science

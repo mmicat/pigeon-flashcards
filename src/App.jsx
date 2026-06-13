@@ -25,12 +25,12 @@ const App = () => {
     },
     {
       question: pigeonPinkNeckedGreen,
-      answer: "Pink-Necked Green",
+      answer: "Pink-Necked Green Pigeon",
       category: "Rare"
     },
     {
       question: pigeonVictoriaCrowned,
-      answer: "Victoria Crowned",
+      answer: "Victoria Crowned Pigeon",
       category: "Rare"
     },
     {
@@ -45,32 +45,32 @@ const App = () => {
     },
     {
       question: pigeonRock,
-      answer: "Rock",
+      answer: "Rock Dove/Pigeon",
       category: "Common"
     },
     {
       question: pigeonJacobin,
-      answer: "Jacobin",
+      answer: "Jacobin Pigeon",
       category: "Ornamental"
     },
     {
       question: doveZebra,
-      answer: "Zebra",
+      answer: "Zebra Dove",
       category: "Common"
     },
     {
       question: pigeonNicobar,
-      answer: "Nicobar",
+      answer: "Nicobar Pigeon",
       category: "Rare"
     },
     {
       question: pigeonLuzonBleedingHeart,
-      answer: "Luzon Bleeding-heart",
+      answer: "Luzon Bleeding-heart Pigeon",
       category: "Rare"
     },
     {
       question: pigeonBrunnerPouter,
-      answer: "Brunner Pouter",
+      answer: "Brunner Pouter Pigeon",
       category: "Ornamental"
     },
     {
