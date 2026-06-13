@@ -28,32 +28,26 @@ The following **optional** features are implemented:
 - [x] Cards contain images in addition to or in place of text
   - [x] Some or all cards have images in place of or in addition to text
 - [x] Cards have different visual styles such as color based on their category
-  - Example categories you can use:
-    - Difficulty: Easy/medium/hard
-    - Subject: Biology/Chemistry/Physics/Earth science
+  - Common/Rare/Ornamental
 
-The following **additional** features are implemented:
+The following **additional** features could be implemented in the near future:
 
-- [ ] List anything else that you added to improve the site's functionality!
+- [ ] Back button
+- [ ] Unique card-only logic
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/4rFS49P.gif' title='Video Walkthrough' width='200px' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ...
-
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with Snip & Sketch for Windows
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Challenges encountered while building the app.
 
 **State Management:**
 
@@ -63,6 +57,7 @@ Describe any challenges encountered while building the app.
 
 - **Image not displaying issue** - In Vite, relative string paths like `"./assets/image.jpg"` don't resolve correctly. Solution: imported images as module dependencies so Vite properly bundles them
 - **Next button not functional** - Prop name mismatch between parent (App.jsx) and child (Controls.jsx). Parent passed `nextCard={handleNextCard}` but child destructured `{handleNextCard}`. Fixed by aligning prop names
+- Centered styling & acheiving an overall clean look
 
 ## License
 
