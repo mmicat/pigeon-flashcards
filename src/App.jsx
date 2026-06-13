@@ -3,65 +3,78 @@ import { useState } from 'react';
 import CardDisplay from './components/CardDisplay';
 import Controls from './components/Controls';
 
+import doveMourning from './assets/dove-mourning.jpg';
+import pigeonPinkNeckedGreen from './assets/pigeon-pinkneckedgreen.jpg';
+import pigeonVictoriaCrowned from './assets/pigeon-victoriacrowned.jpg';
+import doveLemon from './assets/dove-lemon.jpg';
+import pigeonBirminghamRoller from './assets/pigeon-birminghamroller.jpg';
+import pigeonRock from './assets/pigeon-rock.jpg';
+import pigeonJacobin from './assets/pigeon-jacobin.jpg';
+import doveZebra from './assets/dove-zebra.jpg';
+import pigeonNicobar from './assets/pigeon-nicobar.jpg';
+import pigeonLuzonBleedingHeart from './assets/pigeon-luzonbleedingheart.jpg';
+import pigeonBrunnerPouter from './assets/pigeon-brunnerpouter.jpg';
+import doveEurasianCollared from './assets/dove-eurasiancollared.jpg';
+
 const App = () => {
   const pigeonCards = [
     {
-      question: "./assets/dove-mourning.jpg",
+      question: doveMourning,
       answer: "Mourning Dove",
       category: "Common"
     },
     {
-      question: "./assets/pigeon-pinkneckedgreen",
+      question: pigeonPinkNeckedGreen,
       answer: "Pink-Necked Green",
       category: "Rare"
     },
     {
-      question: "./assets/pigeon-victoriacrowned",
+      question: pigeonVictoriaCrowned,
       answer: "Victoria Crowned",
       category: "Rare"
     },
     {
-      question: "./assets/dove-lemon",
+      question: doveLemon,
       answer: "Lemon Dove",
       category: "Common"
     },
     {
-      question: "./assets/pigeon-birminghamroller.jpg",
+      question: pigeonBirminghamRoller,
       answer: "Birmingham Roller",
       category: "Rare"
     },
     {
-      question: "./assets/pigeon-rock.jpg",
+      question: pigeonRock,
       answer: "Rock",
       category: "Common"
     },
     {
-      question: "./assets/pigeon-jacobin.jpg",
+      question: pigeonJacobin,
       answer: "Jacobin",
       category: "Ornamental"
     },
     {
-      question: "./assets/dove-zebra.jpg",
+      question: doveZebra,
       answer: "Zebra",
       category: "Common"
     },
     {
-      question: "./assets/pigeon-nicobar.jpg",
+      question: pigeonNicobar,
       answer: "Nicobar",
       category: "Rare"
     },
     {
-      question: "./assets/pigeon-luzonbleedingheart.jpg",
+      question: pigeonLuzonBleedingHeart,
       answer: "Luzon Bleeding-heart",
       category: "Rare"
     },
     {
-      question: "./assets/pigeon-brunnerpouter.jpg",
+      question: pigeonBrunnerPouter,
       answer: "Brunner Pouter",
       category: "Ornamental"
     },
     {
-      question: "./assets/dove-eurasiancollared.jpg",
+      question: doveEurasianCollared,
       answer: "Eurasian Collared Dove",
       category: "Common"
     }
@@ -103,7 +116,7 @@ const App = () => {
         onFlipCard={handleFlipCard}
       />
       <Controls 
-        nextCard={handleNextCard}
+        handleNextCard={handleNextCard}
       />
 
     </div>

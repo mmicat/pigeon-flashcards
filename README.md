@@ -55,8 +55,14 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 
+**State Management:**
+
 - Almost made the error of not using useState() for state variables currentCardIndex and isFlipped
-- Minor error checks
+
+**Debugging Session Fixes:**
+
+- **Image not displaying issue** - In Vite, relative string paths like `"./assets/image.jpg"` don't resolve correctly. Solution: imported images as module dependencies so Vite properly bundles them
+- **Next button not functional** - Prop name mismatch between parent (App.jsx) and child (Controls.jsx). Parent passed `nextCard={handleNextCard}` but child destructured `{handleNextCard}`. Fixed by aligning prop names
 
 ## License
 
