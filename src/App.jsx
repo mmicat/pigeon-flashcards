@@ -1,5 +1,7 @@
 import './App.css';
 import { useState } from 'react';
+import CardDisplay from './components/CardDisplay';
+import Controls from './components/Controls';
 
 const App = () => {
   const pigeonCards = [
@@ -9,24 +11,59 @@ const App = () => {
       category: "Common"
     },
     {
-      question: "",
-      answer: "",
-      category: "Common"
-    },
-    {
-      question: "",
-      answer: "",
+      question: "./assets/pigeon-pinkneckedgreen",
+      answer: "Pink-Necked Green",
       category: "Rare"
     },
     {
-      question: "",
-      answer: "",
-      category: "Ornamental"
+      question: "./assets/pigeon-victoriacrowned",
+      answer: "Victoria Crowned",
+      category: "Rare"
+    },
+    {
+      question: "./assets/dove-lemon",
+      answer: "Lemon Dove",
+      category: "Common"
     },
     {
       question: "./assets/pigeon-birminghamroller.jpg",
       answer: "Birmingham Roller",
       category: "Rare"
+    },
+    {
+      question: "./assets/pigeon-rock.jpg",
+      answer: "Rock",
+      category: "Common"
+    },
+    {
+      question: "./assets/pigeon-jacobin.jpg",
+      answer: "Jacobin",
+      category: "Ornamental"
+    },
+    {
+      question: "./assets/dove-zebra.jpg",
+      answer: "Zebra",
+      category: "Common"
+    },
+    {
+      question: "./assets/pigeon-nicobar.jpg",
+      answer: "Nicobar",
+      category: "Rare"
+    },
+    {
+      question: "./assets/pigeon-luzonbleedingheart.jpg",
+      answer: "Luzon Bleeding-heart",
+      category: "Rare"
+    },
+    {
+      question: "./assets/pigeon-brunnerpouter.jpg",
+      answer: "Brunner Pouter",
+      category: "Ornamental"
+    },
+    {
+      question: "./assets/dove-eurasiancollared.jpg",
+      answer: "Eurasian Collared Dove",
+      category: "Common"
     }
   ];
 
