@@ -2,7 +2,7 @@ import App from "../App";
 
 const CardDisplay = ({ card, isFlipped, onFlipCard }) => { // destructured; receiving props
   return (
-    <div className="card" onClick={onFlipCard}> // passed click event
+    <div className="card" onClick={onFlipCard}>
       <div className="card-content">
         {isFlipped ? (
           <p>{card.answer}</p> // display card answer
@@ -16,7 +16,7 @@ const CardDisplay = ({ card, isFlipped, onFlipCard }) => { // destructured; rece
             "category-rare" ) : (
             card.category === "Ornamental" ? (
             "category-ornamental"
-            ) : (null)))}></span>
+            ) : (null)))}>{card.category}</span>
       </div>
     </div>
   );
