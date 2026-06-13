@@ -4,7 +4,7 @@ Submitted by: **Mira Mohamad Ismail**
 
 This web app: **insert description**
 
-Time spent: **X** hours spent in total
+Time spent: **3.5** hours spent in total
 
 ## Required Features
 
@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 - [x] **The app displays the title of the card set, a short description, and the total number of cards**
   - [x] Title of card set is displayed
   - [x] A short description of the card set is displayed
-  - [ ] A list of card pairs is created
+  - [x] A list of card pairs is created
   - [x] The total number of cards in the set is displayed
   - [x] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
 - [x] **A single card at a time is displayed**
