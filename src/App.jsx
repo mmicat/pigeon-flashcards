@@ -172,6 +172,22 @@ const App = () => {
     setGuessStatus('');
   }
 
+  const handleMarkMastered = () => {
+    // a new array excluding the current card
+    const updatedCards = cards.filter((_, index) => index !== currentCardIndex);
+    setCards(updatedCards);
+    
+    // prevent index out of bounds if we master the last card
+    if (currentCardIndex >= updatedCards.length) {
+      setCurrentCardIndex(updatedCards.length - 1);
+    }
+    
+    setIsFlipped(false);
+    setUserGuess("");
+    setGuessStatus("");
+  };
+
+
   return (
     <div className="App">
       <div className="header">
@@ -188,6 +204,10 @@ const App = () => {
         isFlipped={isFlipped}
         onFlipCard={handleFlipCard}
       />
+      <button className="button master-btn" onClick={handleMarkMastered}>
+        Mark as Mastered
+      </button>
+
       <form onSubmit ={handleGuessSubmit} className='guess-form'>
         <label htmlFor='userGuess'>Enter your guess:</label>
         <input 
@@ -205,6 +225,7 @@ const App = () => {
         handlePrevCard={handlePrevCard}
         isFirstCard={currentCardIndex === 0}
         isLastCard={currentCardIndex === cards.length - 1}
+        handleShuffle={handleShuffle}
       />
 
     </div>
