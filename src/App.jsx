@@ -187,8 +187,7 @@ const App = () => {
     setGuessStatus("");
   };
 
-
-  return (
+    return (
     <div className="App">
       <div className="header">
         <h1>Pigeon Coo-nnosieur</h1>
@@ -199,34 +198,50 @@ const App = () => {
         <p>Current Streak: {currentStreak}   |   High Score: {highStreak}</p>
       </div>
 
-      <CardDisplay // passing props
-        card={cards[currentCardIndex]}
-        isFlipped={isFlipped}
-        onFlipCard={handleFlipCard}
-      />
-      <button className="button master-btn" onClick={handleMarkMastered}>
-        Mark as Mastered
-      </button>
-
-      <form onSubmit ={handleGuessSubmit} className='guess-form'>
-        <label htmlFor='userGuess'>Enter your guess:</label>
-        <input 
-          type='text'
-          id='userGuess'
-          value={userGuess}
-          onChange={handleGuessChange}
-          className={guessStatus}
-          placeholder='Guess the pigeon...'
-        />
-        <button type='submit' className='button'>Guess?</button>
-      </form>
-      <Controls 
-        handleNextCard={handleNextCard}
-        handlePrevCard={handlePrevCard}
-        isFirstCard={currentCardIndex === 0}
-        isLastCard={currentCardIndex === cards.length - 1}
-        handleShuffle={handleShuffle}
-      />
+      {cards.length > 0 ? (
+        <>
+          <CardDisplay
+            card={cards[currentCardIndex]}
+            isFlipped={isFlipped}
+            onFlipCard={handleFlipCard}
+            onMarkMastered={handleMarkMastered}
+          />
+          <form onSubmit ={handleGuessSubmit} className='guess-form'>
+            <label htmlFor='userGuess'>Enter your guess:</label>
+            <input 
+              type='text'
+              id='userGuess'
+              value={userGuess}
+              onChange={handleGuessChange}
+              className={guessStatus}
+              placeholder='Guess the pigeon...'
+            />
+            <button type='submit' className='button'>Guess?</button>
+          </form>
+          <Controls 
+            handleNextCard={handleNextCard}
+            handlePrevCard={handlePrevCard}
+            isFirstCard={currentCardIndex === 0}
+            isLastCard={currentCardIndex === cards.length - 1}
+            handleShuffle={handleShuffle}
+          />
+        </>
+      ) : (
+        <div className="victory-message">
+          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWNnampjYmtxcGMyb3ZyZHVyZHpsOGppejg1N2IzbzVzeWpoNW9uNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PhqagHqoxq6je/giphy.gif" alt="Silly Pigeon GIF" />
+          <h2 style={{fontSize: '2em', color:'grey', margin: '15px'}}> Congratulations! </h2>
+          <p style={{marginBottom:'15px'}}>You have mastered all the pigeon breeds!</p>
+          <button 
+            className="button" 
+            onClick={() => {
+              setCards(pigeonCards);
+              setCurrentCardIndex(0);
+            }}
+          >
+            Restart Deck
+          </button>
+        </div>
+      )}
 
     </div>
   )

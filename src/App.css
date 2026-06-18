@@ -194,6 +194,12 @@ body {
   opacity: 0.6;
 }
 
+input {
+  font-size: 1em;
+  padding: 5px 20px;
+  margin: 20px 0;
+}
+
 input.correct {
   border: 3px solid #28a745;
   background-color: #e6ffe6;
@@ -202,6 +208,58 @@ input.correct {
 input.incorrect {
   border: 3px solid #dc3545;
   background-color: #ffe6e6;
+}
+
+.streaks {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  padding: 15px;
+}
+
+.victory-message img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.btn-mastered {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 5;
+  background-color: #6e8b75;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.btn-mastered:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-mastered:active {
+  transform: translateY(0);
+}
+
+.guess-form {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
