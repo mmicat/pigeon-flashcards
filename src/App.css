@@ -188,6 +188,13 @@ body {
   transform: scale(0.97);
 }
 
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
 @media (max-width: 600px) {
   .App {
     padding: 20px 15px;

@@ -105,16 +105,21 @@ const App = () => {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
   }
 
-  const [currentCardIndex, setCurrentCardIndex] = useState(getRandomIntExclusive(0, pigeonCards.length));
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
   function handleNextCard() {
-    let randomCardIndex = currentCardIndex; // start equal to force loop
-    while (randomCardIndex === currentCardIndex){
-      randomCardIndex = getRandomIntExclusive(0,pigeonCards.length);
+    if (currentCardIndex < pigeonCards.length - 1) {
+      setCurrentCardIndex(currentCardIndex + 1);
+      setIsFlipped(false);
     }
-    setCurrentCardIndex(randomCardIndex);
-    setIsFlipped(false);
+  }
+
+  function handlePrevCard() {
+    if (currentCardIndex > 0) {
+      setCurrentCardIndex(currentCardIndex - 1);
+      setIsFlipped(false);
+    }
   }
 
   function handleFlipCard() {
@@ -136,6 +141,9 @@ const App = () => {
       />
       <Controls 
         handleNextCard={handleNextCard}
+        handlePrevCard={handlePrevCard}
+        isFirstCard={currentCardIndex === 0}
+        isLastCard={currentCardIndex === pigeonCards.length - 1}
       />
 
     </div>
