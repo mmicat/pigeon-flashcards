@@ -23,6 +23,9 @@ import pigeonSpeckled from './assets/pigeon-speckled.jpg';
 const App = () => {
   const [userGuess, setUserGuess] = useState('');
   const [guessStatus, setGuessStatus] = useState(''); // '', 'correct', 'incorrect'
+
+  const [currentStreak, setCurrentStreak] = useState(0);
+  const [highStreak, setHighStreak] = useState(0);
   
   const pigeonCards = [
     {
@@ -122,8 +125,17 @@ const App = () => {
 
     if (userAnswer === correctAnswer) {
       setGuessStatus('correct')
+      setCurrentStreak(prev => {
+        const newStreak = prev + 1;
+        if (newStreak > highStreak) {
+          setHighStreak(newStreak);
+        }
+        return newStreak;
+      });
     } else {
-      setGuessStatus('incorrect')
+      setGuessStatus('incorrect');
+      setCurrentStreak(0);
+      alert(`Aw, that's not right! The correct answer was "${pigeonCards[currentCardIndex].answer}"`)
     }
   }
   
@@ -155,6 +167,9 @@ const App = () => {
         <h1>Pigeon Coo-nnosieur</h1>
         <h3>Can you correctly identify these different pigeon breeds from around the world?</h3>
         <span>Total Cards: {pigeonCards.length}</span>
+      </div>
+      <div className='streaks'>
+        <p>Current Streak: {currentStreak}   |   High Score: {highStreak}</p>
       </div>
 
       <CardDisplay // passing props
