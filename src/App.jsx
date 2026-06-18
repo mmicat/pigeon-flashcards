@@ -21,6 +21,9 @@ import pigeonSpeckled from './assets/pigeon-speckled.jpg';
 
 
 const App = () => {
+  const [userGuess, setUserGuess] = useState('');
+  const [guessStatus, setGuessStatus] = useState(''); // '', 'correct', 'incorrect'
+  
   const pigeonCards = [
     {
       question: doveMourning,
@@ -108,10 +111,28 @@ const App = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const handleGuessChange = (event) => {
+    setUserGuess(event.target.value);
+  };
+
+  const handleGuessSubmit = (event) => {
+    event.preventDefault();
+    const correctAnswer = pigeonCards[currentCardIndex].answer.toLowerCase().trim();
+    const userAnswer = userGuess.toLowerCase().trim();
+
+    if (userAnswer === correctAnswer) {
+      setGuessStatus('correct')
+    } else {
+      setGuessStatus('incorrect')
+    }
+  }
+  
   function handleNextCard() {
     if (currentCardIndex < pigeonCards.length - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
       setIsFlipped(false);
+      setUserGuess("");
+      setGuessStatus("");
     }
   }
 
@@ -119,6 +140,8 @@ const App = () => {
     if (currentCardIndex > 0) {
       setCurrentCardIndex(currentCardIndex - 1);
       setIsFlipped(false);
+      setUserGuess("");
+      setGuessStatus("");
     }
   }
 
@@ -139,6 +162,18 @@ const App = () => {
         isFlipped={isFlipped}
         onFlipCard={handleFlipCard}
       />
+      <form onSubmit ={handleGuessSubmit} className='guess-form'>
+        <label htmlFor='userGuess'>Enter your guess:</label>
+        <input 
+          type='text'
+          id='userGuess'
+          value={userGuess}
+          onChange={handleGuessChange}
+          className={guessStatus}
+          placeholder='Guess the pigeon...'
+        />
+        <button type='submit' className='button'>Guess?</button>
+      </form>
       <Controls 
         handleNextCard={handleNextCard}
         handlePrevCard={handlePrevCard}

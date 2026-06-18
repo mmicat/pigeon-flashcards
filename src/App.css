@@ -194,6 +194,16 @@ body {
   opacity: 0.6;
 }
 
+input.correct {
+  border: 3px solid #28a745;
+  background-color: #e6ffe6;
+}
+
+input.incorrect {
+  border: 3px solid #dc3545;
+  background-color: #ffe6e6;
+}
+
 
 @media (max-width: 600px) {
   .App {
