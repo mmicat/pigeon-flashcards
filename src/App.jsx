@@ -105,6 +105,8 @@ const App = () => {
     } 
   ];
 
+  const [cards, setCards] = useState(pigeonCards);
+
   function getRandomIntExclusive(min, max) { // outsourced logic
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
@@ -120,7 +122,7 @@ const App = () => {
 
   const handleGuessSubmit = (event) => {
     event.preventDefault();
-    const correctAnswer = pigeonCards[currentCardIndex].answer.toLowerCase().trim();
+    const correctAnswer = cards[currentCardIndex].answer.toLowerCase().trim();
     const userAnswer = userGuess.toLowerCase().trim();
 
     if (userAnswer === correctAnswer) {
@@ -135,12 +137,12 @@ const App = () => {
     } else {
       setGuessStatus('incorrect');
       setCurrentStreak(0);
-      alert(`Aw, that's not right! The correct answer was "${pigeonCards[currentCardIndex].answer}"`)
+      alert(`Aw, that's not right! The correct answer was "${cards[currentCardIndex].answer}"`)
     }
   }
   
   function handleNextCard() {
-    if (currentCardIndex < pigeonCards.length - 1) {
+    if (currentCardIndex < cards.length - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
       setIsFlipped(false);
       setUserGuess("");
@@ -161,19 +163,28 @@ const App = () => {
     setIsFlipped(!isFlipped);
   }
 
+  const handleShuffle = () => {
+    const shuffled = [...cards].sort(() => Math.random() - 0.5)
+    setCards(shuffled);
+    setCurrentCardIndex(0);
+    setIsFlipped(false);
+    setUserGuess('');
+    setGuessStatus('');
+  }
+
   return (
     <div className="App">
       <div className="header">
         <h1>Pigeon Coo-nnosieur</h1>
         <h3>Can you correctly identify these different pigeon breeds from around the world?</h3>
-        <span>Total Cards: {pigeonCards.length}</span>
+        <span>Total Cards: {cards.length}</span>
       </div>
       <div className='streaks'>
         <p>Current Streak: {currentStreak}   |   High Score: {highStreak}</p>
       </div>
 
       <CardDisplay // passing props
-        card={pigeonCards[currentCardIndex]}
+        card={cards[currentCardIndex]}
         isFlipped={isFlipped}
         onFlipCard={handleFlipCard}
       />
@@ -193,7 +204,7 @@ const App = () => {
         handleNextCard={handleNextCard}
         handlePrevCard={handlePrevCard}
         isFirstCard={currentCardIndex === 0}
-        isLastCard={currentCardIndex === pigeonCards.length - 1}
+        isLastCard={currentCardIndex === cards.length - 1}
       />
 
     </div>

@@ -5,10 +5,13 @@ const Controls = ({handleNextCard, handlePrevCard, isFirstCard, isLastCard}) => 
   return (
     <div className="controls">
       <button className="button" onClick={handlePrevCard} disabled={isFirstCard}>
-        Previous
+        Back
       </button>
       <button className="button" onClick={handleNextCard} disabled={isLastCard}>
         Next
+      </button>
+      <button className="button" onClick={handleShuffle}>
+        Shuffle
       </button>
     </div>
   );
