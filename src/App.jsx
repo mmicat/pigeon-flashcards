@@ -20,90 +20,90 @@ import pigeonCommonWood from './assets/pigeon-commonwood.jpg';
 import pigeonSpeckled from './assets/pigeon-speckled.jpg';
 
 
+const pigeonCards = [
+  {
+    question: doveMourning,
+    answer: "Mourning Dove",
+    category: "Common"
+  },
+  {
+    question: pigeonPinkNeckedGreen,
+    answer: "Pink-Necked Green Pigeon",
+    category: "Rare"
+  },
+  {
+    question: pigeonVictoriaCrowned,
+    answer: "Victoria Crowned Pigeon",
+    category: "Rare"
+  },
+  {
+    question: doveLemon,
+    answer: "Lemon Dove",
+    category: "Common"
+  },
+  {
+    question: pigeonBirminghamRoller,
+    answer: "Birmingham Roller",
+    category: "Ornamental"
+  },
+  {
+    question: pigeonRock,
+    answer: "Rock Dove/Pigeon",
+    category: "Common"
+  },
+  {
+    question: pigeonJacobin,
+    answer: "Jacobin Pigeon",
+    category: "Ornamental"
+  },
+  {
+    question: doveZebra,
+    answer: "Zebra Dove",
+    category: "Common"
+  },
+  {
+    question: pigeonNicobar,
+    answer: "Nicobar Pigeon",
+    category: "Rare"
+  },
+  {
+    question: pigeonLuzonBleedingHeart,
+    answer: "Luzon Bleeding-heart Pigeon",
+    category: "Rare"
+  },
+  {
+    question: pigeonBrunnerPouter,
+    answer: "Brunner Pouter Pigeon",
+    category: "Ornamental"
+  },
+  {
+    question: doveEurasianCollared,
+    answer: "Eurasian Collared Dove",
+    category: "Common"
+  },
+  {
+    question: doveJambuFruitMale,
+    answer: "Jambu Fruit Dove (Male)",
+    category: "Rare"
+  },
+  {
+    question: pigeonCommonWood,
+    answer: "Common Wood Pigeon",
+    category: "Common"
+  },
+  {
+    question: pigeonSpeckled,
+    answer: "Speckled Pigeon",
+    category: "Common"
+  } 
+];
+
 const App = () => {
   const [userGuess, setUserGuess] = useState('');
   const [guessStatus, setGuessStatus] = useState(''); // '', 'correct', 'incorrect'
 
   const [currentStreak, setCurrentStreak] = useState(0);
   const [highStreak, setHighStreak] = useState(0);
-  
-  const pigeonCards = [
-    {
-      question: doveMourning,
-      answer: "Mourning Dove",
-      category: "Common"
-    },
-    {
-      question: pigeonPinkNeckedGreen,
-      answer: "Pink-Necked Green Pigeon",
-      category: "Rare"
-    },
-    {
-      question: pigeonVictoriaCrowned,
-      answer: "Victoria Crowned Pigeon",
-      category: "Rare"
-    },
-    {
-      question: doveLemon,
-      answer: "Lemon Dove",
-      category: "Common"
-    },
-    {
-      question: pigeonBirminghamRoller,
-      answer: "Birmingham Roller",
-      category: "Ornamental"
-    },
-    {
-      question: pigeonRock,
-      answer: "Rock Dove/Pigeon",
-      category: "Common"
-    },
-    {
-      question: pigeonJacobin,
-      answer: "Jacobin Pigeon",
-      category: "Ornamental"
-    },
-    {
-      question: doveZebra,
-      answer: "Zebra Dove",
-      category: "Common"
-    },
-    {
-      question: pigeonNicobar,
-      answer: "Nicobar Pigeon",
-      category: "Rare"
-    },
-    {
-      question: pigeonLuzonBleedingHeart,
-      answer: "Luzon Bleeding-heart Pigeon",
-      category: "Rare"
-    },
-    {
-      question: pigeonBrunnerPouter,
-      answer: "Brunner Pouter Pigeon",
-      category: "Ornamental"
-    },
-    {
-      question: doveEurasianCollared,
-      answer: "Eurasian Collared Dove",
-      category: "Common"
-    },
-    {
-      question: doveJambuFruitMale,
-      answer: "Jambu Fruit Dove (Male)",
-      category: "Rare"
-    },
-    {
-      question: pigeonCommonWood,
-      answer: "Common Wood Pigeon",
-      category: "Common"
-    },
-    {
-      question: pigeonSpeckled,
-      answer: "Speckled Pigeon",
-      category: "Common"
-    } 
-  ];
 
   const [cards, setCards] = useState(pigeonCards);
 
@@ -125,7 +125,7 @@ const App = () => {
     const correctAnswer = cards[currentCardIndex].answer.toLowerCase().trim();
     const userAnswer = userGuess.toLowerCase().trim();
 
-    if (userAnswer === correctAnswer) {
+    if (userAnswer.length > 0 && correctAnswer.includes(userAnswer)) {
       setGuessStatus('correct')
       setCurrentStreak(prev => {
         const newStreak = prev + 1;
