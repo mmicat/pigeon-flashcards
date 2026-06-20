@@ -1,6 +1,3 @@
-import App from "../App";
-import CardDisplay from "./CardDisplay";
-
 const Controls = ({handleNextCard, handlePrevCard, isFirstCard, isLastCard, handleShuffle}) => { // destructured; receiving props
   return (
     <div className="controls">

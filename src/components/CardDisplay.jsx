@@ -1,5 +1,3 @@
-import App from "../App";
-
 const CardDisplay = ({ card, isFlipped, onFlipCard, onMarkMastered }) => { 
   return (
     <div className="flip-card" onClick={onFlipCard}>
